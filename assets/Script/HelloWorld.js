@@ -17,7 +17,10 @@ cc.Class({
 
         this.net=net;
         this.net.connect();
-        this.net.send('Hello');
+        this.net.addHandler('test_pust',(data)=>{
+            console.log('test_pust',data);
+        });
+        this.net.send('test_pust','hello');
     },
 
 
